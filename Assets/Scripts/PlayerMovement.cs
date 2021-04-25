@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float controlSpeed = 32f;
-    [SerializeField] float xRange = 15f;
-    [SerializeField] float yRange = 3f;
+    [SerializeField] private float controlSpeed = 32f;
+    [SerializeField] private float xRange = 15f;
+    [SerializeField] private float yRange = 3f;
+    [SerializeField] private float positionPitchFactor = -2f;
+    [SerializeField] private float controlPitchFactor = -10f;
+    [SerializeField] private float controlRollFactor = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +20,26 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        ProccessTranslation();
+        ProccessRotation();
+    }
+
+    private void ProccessRotation()
+    {
+        float xThrow = Input.GetAxis("Horizontal");
+        float yThrow = Input.GetAxis("Vertical");
+
+        float pitch = -90f 
+            + transform.localPosition.y * positionPitchFactor 
+            + yThrow * controlPitchFactor;
+        float yaw = xThrow * controlRollFactor;
+        float roll = xThrow * controlRollFactor;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    private void ProccessTranslation()
     {
         float xThrow = Input.GetAxis("Horizontal");
         float yThrow = Input.GetAxis("Vertical");
@@ -27,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         float rawYPos = transform.localPosition.y + yOffset;
 
         float clampedXPos = Mathf.Clamp(rawXPos, -xRange, xRange);
-        float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange*5);
+        float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange * 5);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
     }
