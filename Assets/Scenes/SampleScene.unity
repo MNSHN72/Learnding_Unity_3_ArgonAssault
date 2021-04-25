@@ -424,6 +424,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 67f7037c63453d34995d938c5fbe0362, type: 2}
+    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: yRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: controlRollFactor
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: positionPitchFactor
+      value: -1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4363726716686826776, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
       propertyPath: m_Name
       value: Player

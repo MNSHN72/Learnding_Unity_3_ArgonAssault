@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float yRange = 5f;
     [SerializeField] private float positionPitchFactor = -1.5f;
     [SerializeField] private float controlPitchFactor = -8f;
-    [SerializeField] private float controlRollFactor = 30f;
+    [SerializeField] private float controlRollFactor = -30f;
 
     private float xThrow;
     private float yThrow;
