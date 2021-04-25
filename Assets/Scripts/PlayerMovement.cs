@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float controlSpeed = 32f;
-    [SerializeField] private float xRange = 15f;
+    [SerializeField] private float controlSpeed = 45f;
+    [SerializeField] private float xRange = 20f;
     [SerializeField] private float yRange = 5f;
     [SerializeField] private float positionPitchFactor = -1.5f;
     [SerializeField] private float controlPitchFactor = -8f;
