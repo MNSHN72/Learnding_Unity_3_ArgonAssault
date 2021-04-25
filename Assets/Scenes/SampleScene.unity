@@ -420,6 +420,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: controlYawFactor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: positionYawFactor
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3757865510394063046, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 2000
