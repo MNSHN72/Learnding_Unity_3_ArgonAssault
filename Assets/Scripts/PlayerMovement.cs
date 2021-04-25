@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float xRange = 15f;
     [SerializeField] private float yRange = 3f;
     [SerializeField] private float positionPitchFactor = -2f;
-    [SerializeField] private float controlPitchFactor = -10f;
-    [SerializeField] private float controlRollFactor = 10f;
+    [SerializeField] private float controlPitchFactor = -8f;
+    [SerializeField] private float controlRollFactor = 30f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +30,9 @@ public class PlayerMovement : MonoBehaviour
         float xThrow = Input.GetAxis("Horizontal");
         float yThrow = Input.GetAxis("Vertical");
 
-        float pitch = -90f 
-            + transform.localPosition.y * positionPitchFactor 
+        float pitch = transform.localPosition.y * positionPitchFactor
             + yThrow * controlPitchFactor;
-        float yaw = xThrow * controlRollFactor;
+        float yaw = 0;
         float roll = xThrow * controlRollFactor;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
