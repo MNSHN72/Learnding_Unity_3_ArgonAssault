@@ -463,11 +463,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a8275349f18f74485cb1a3bd6533f8, type: 3}
---- !u!1 &1083401821 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6983432164162399781, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-  m_PrefabInstance: {fileID: 1588202375}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1165632171
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,38 +598,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 963194227, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194227, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.0754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194227, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.0754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 963194227, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.0754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968544005489186058, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: weapons.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: weapons.Array.data[0]
-      value: 
-      objectReference: {fileID: 2040954675}
-    - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-      propertyPath: weapons.Array.data[1]
-      value: 
-      objectReference: {fileID: 1083401821}
     - target: {fileID: 4363726716686826776, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -688,11 +651,6 @@ PrefabInstance:
 --- !u!95 &1588202377 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1588202377, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
-  m_PrefabInstance: {fileID: 1588202375}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2040954675 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3811890290038601549, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
   m_PrefabInstance: {fileID: 1588202375}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1504936647925575847
