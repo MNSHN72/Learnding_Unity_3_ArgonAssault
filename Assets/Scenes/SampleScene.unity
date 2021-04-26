@@ -619,6 +619,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0.0754717
       objectReference: {fileID: 0}
+    - target: {fileID: 2968544005489186058, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3053882409467782125, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
       propertyPath: weapons.Array.size
       value: 2
