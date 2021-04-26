@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float xThrow;
     private float yThrow;
+    private bool dead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +28,29 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProccessTranslation();
-        ProccessRotation();
-        ProccessFiring();
+        if (dead == false)
+        {
+            ProccessTranslation();
+            ProccessRotation();
+            ProccessFiring(); 
+        }
+        if (dead == true)
+        {
+            Invoke("reloadLevel", 1f);
+        }
     }
 
-  
+    private void reloadLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        dead = true;
+    }
+
+
 
     private void ProccessRotation()
     {
