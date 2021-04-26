@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
     private void DeactivateWeapon(int weaponIndex)
     {
         ParticleSystem[] weaponsToDeactivate = weapons[weaponIndex].GetComponentsInChildren<ParticleSystem>();
+
         foreach (ParticleSystem weapon in weaponsToDeactivate)
         {
             weapon.enableEmission = false;
@@ -110,4 +111,5 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
 }
