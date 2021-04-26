@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float controlRollFactor = -30f;
     [SerializeField] private float positionYawFactor = 1.6f;
     [SerializeField] private float controlYawFactor = 3f;
+    [SerializeField] private GameObject[] weapons;
 
     private float xThrow;
     private float yThrow;
@@ -27,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
     {
         ProccessTranslation();
         ProccessRotation();
+        ProccessFiring();
     }
+
+  
 
     private void ProccessRotation()
     {
@@ -61,5 +65,55 @@ public class PlayerMovement : MonoBehaviour
         float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange * 4);
 
         transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
+    }
+
+    private void ProccessFiring()
+    {
+        float fireVulcan = Input.GetAxis("Fire1");
+        float fireCannon = Input.GetAxis("Fire2");
+        FiringHelper0(fireVulcan,0);
+        FiringHelper1(fireCannon, 1);
+
+    }
+
+    private void FiringHelper0(float fireWeapon,int weaponIndex)
+    {
+        if (fireWeapon == 1f)
+        {
+            ActivateWeapon(weaponIndex);
+        }
+        else
+        {
+            DeactivateWeapon(weaponIndex);
+        }
+    }
+    private void FiringHelper1(float fireWeapon, int weaponIndex)
+    {
+        if (fireWeapon == 1f)
+        {
+            ActivateWeapon(weaponIndex);
+        }
+        else
+        {
+            DeactivateWeapon(weaponIndex);
+        }
+    }
+
+    private void DeactivateWeapon(int weaponIndex)
+    {
+        ParticleSystem[] weaponsToDeactivate = weapons[weaponIndex].GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem weapon in weaponsToDeactivate)
+        {
+            weapon.enableEmission = false;
+        }
+    }
+
+    private void ActivateWeapon(int weaponIndex)
+    {
+        ParticleSystem[] weaponsToActivate = weapons[weaponIndex].GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem weapon in weaponsToActivate)
+        {
+            weapon.enableEmission = true;
+        }
     }
 }
