@@ -69,24 +69,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProccessFiring()
     {
-        float fireVulcan = Input.GetAxis("Fire1");
+        bool fireVulcan = Input.GetButton("Fire1");
         bool fireCannon = Input.GetButtonDown("Fire2");
         FiringHelper(fireVulcan,0);
         FiringHelper(fireCannon,1);
 
     }
 
-    private void FiringHelper(float fireWeapon,int weaponIndex)
-    {
-        if (fireWeapon == 1f)
-        {
-            ActivateWeapon(weaponIndex);
-        }
-        else
-        {
-            DeactivateWeapon(weaponIndex);
-        }
-    }
     private void FiringHelper(bool fireWeapon, int weaponIndex)
     {
         if (fireWeapon)
