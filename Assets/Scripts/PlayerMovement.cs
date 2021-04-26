@@ -70,13 +70,13 @@ public class PlayerMovement : MonoBehaviour
     private void ProccessFiring()
     {
         float fireVulcan = Input.GetAxis("Fire1");
-        float fireCannon = Input.GetAxis("Fire2");
-        FiringHelper0(fireVulcan,0);
-        FiringHelper1(fireCannon, 1);
+        bool fireCannon = Input.GetButtonDown("Fire2");
+        FiringHelper(fireVulcan,0);
+        FiringHelper(fireCannon,1);
 
     }
 
-    private void FiringHelper0(float fireWeapon,int weaponIndex)
+    private void FiringHelper(float fireWeapon,int weaponIndex)
     {
         if (fireWeapon == 1f)
         {
@@ -87,9 +87,9 @@ public class PlayerMovement : MonoBehaviour
             DeactivateWeapon(weaponIndex);
         }
     }
-    private void FiringHelper1(float fireWeapon, int weaponIndex)
+    private void FiringHelper(bool fireWeapon, int weaponIndex)
     {
-        if (fireWeapon == 1f)
+        if (fireWeapon)
         {
             ActivateWeapon(weaponIndex);
         }
@@ -114,6 +114,11 @@ public class PlayerMovement : MonoBehaviour
         foreach (ParticleSystem weapon in weaponsToActivate)
         {
             weapon.enableEmission = true;
+            if (weapon.emission.burstCount != 0 )
+            {
+                weapon.Stop();
+                weapon.Play();
+            }
         }
     }
 }
