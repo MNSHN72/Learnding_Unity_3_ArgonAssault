@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ProccessTranslation();
             ProccessRotation();
-            ProccessFiring(); 
+            ProccessFiring();
         }
         if (dead == true)
         {

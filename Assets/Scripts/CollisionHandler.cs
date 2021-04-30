@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"collided with {collision.collider.gameObject.name}");
-    }
+    [SerializeField] private ParticleSystem deathExplosion;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"triggered by {other.gameObject.name}");
+        this.GetComponent<MeshRenderer>().enabled = false;
+        this.GetComponent<BoxCollider>().enabled = false;
+        deathExplosion.Play();
     }
 }
