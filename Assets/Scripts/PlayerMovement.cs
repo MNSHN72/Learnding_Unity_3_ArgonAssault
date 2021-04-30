@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float xThrow;
     private float yThrow;
-    private bool dead = false;
+    private bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +28,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead == false)
+        if (isAlive == true)
         {
             ProccessTranslation();
             ProccessRotation();
             ProccessFiring();
         }
-        if (dead == true)
+        if (isAlive == false)
         {
             Invoke("reloadLevel", 1f);
         }
@@ -47,10 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        dead = true;
+        isAlive = false;
     }
-
-
 
     private void ProccessRotation()
     {
