@@ -7,11 +7,11 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private ParticleSystem deathExplosion;
     [SerializeField] private ParticleSystem hitSparks;
-    [SerializeField] private Transform parent;
     [SerializeField] private int pointsOnKill;
     [SerializeField] private int pointsOnHit;
     [SerializeField] private float HP;
 
+    private Transform parent;
     private bool isAlive = true;
     private ScoreBoard sb;
     private void Start()
@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         this.gameObject.AddComponent<Rigidbody>();
         this.gameObject.GetComponent<Rigidbody>().useGravity = false;
         sb = FindObjectOfType<ScoreBoard>();
+        parent = GameObject.FindWithTag("spawnAtRuntime").transform;
     }
     private void OnParticleCollision(GameObject other)
     {
