@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private ParticleSystem deathExplosion;
+    [SerializeField] private ParticleSystem hitSparks;
     [SerializeField] private Transform parent;
     [SerializeField] private int pointsOnKill;
     [SerializeField] private int pointsOnHit;
@@ -20,12 +21,13 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ProccessDamage(other);
+        ProccessParticleEffects(hitSparks);
         ProccessScore(pointsOnHit);
         if (isAlive && HP <= 0)
         {
             isAlive = false;
             ProccessScore(pointsOnKill);
-            ProccessParticleEffects();
+            ProccessParticleEffects(deathExplosion);
             Destroy(this.gameObject);
         }
     }
@@ -42,10 +44,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void ProccessParticleEffects()
+    private void ProccessParticleEffects(ParticleSystem particles)
     {
         ParticleSystem spawnedExplosion =
-            Instantiate(deathExplosion, this.GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(particles, this.GetComponent<Transform>().position, Quaternion.identity);
         spawnedExplosion.transform.parent = parent;
     }
 
