@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LightAttack
   - HeavyAttack
+  - spawnAtRuntime
   layers:
   - Default
   - TransparentFX
