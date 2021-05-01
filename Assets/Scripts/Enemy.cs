@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     private ScoreBoard sb;
     private void Start()
     {
+        this.gameObject.AddComponent<Rigidbody>();
+        this.gameObject.GetComponent<Rigidbody>().useGravity = false;
         sb = FindObjectOfType<ScoreBoard>();
     }
     private void OnParticleCollision(GameObject other)

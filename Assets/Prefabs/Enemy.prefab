@@ -30,7 +30,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   pointsOnKill: 500
   pointsOnHit: 50
-  HP: 50
+  HP: 20
 --- !u!1 &4872425270079039884
 GameObject:
   m_ObjectHideFlags: 0
