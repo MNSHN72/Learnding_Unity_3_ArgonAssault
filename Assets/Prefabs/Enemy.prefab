@@ -27,7 +27,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathExplosion: {fileID: 391977763437517737, guid: 576c01c81e6461b4bb23bb3c7a698d7d, type: 3}
   parent: {fileID: 0}
-  points: 100
+  pointsOnKill: 500
+  pointsOnHit: 50
+  HP: 20
 --- !u!1 &4872425270079039884
 GameObject:
   m_ObjectHideFlags: 0
