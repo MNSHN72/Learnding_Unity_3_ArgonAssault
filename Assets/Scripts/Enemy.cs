@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private ParticleSystem deathExplosion;
     [SerializeField] private ParticleSystem hitSparks;
+    [SerializeField] private AudioSource deathSFX;
     [SerializeField] private int pointsOnKill;
     [SerializeField] private int pointsOnHit;
     [SerializeField] private float HP;
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ProccessDamage(other);
-        ProccessParticleEffects(hitSparks);
+        ProccessFX(hitSparks);
         ProccessScore(pointsOnHit);
         if (isAlive && HP <= 0)
         {
@@ -37,9 +38,10 @@ public class Enemy : MonoBehaviour
     {
         isAlive = false;
         ProccessScore(pointsOnKill);
-        ProccessParticleEffects(deathExplosion);
+        ProccessFX(deathExplosion,deathSFX);
         Destroy(this.gameObject);
     }
+
 
     private void ProccessDamage(GameObject attack)
     {
@@ -53,11 +55,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void ProccessParticleEffects(ParticleSystem particles)
+    private void ProccessFX(ParticleSystem particles, AudioSource audio)
     {
         ParticleSystem spawnedExplosion =
             Instantiate(particles, this.GetComponent<Transform>().position, Quaternion.identity);
         spawnedExplosion.transform.parent = spawnAtRuntime.transform;
+        AudioSource spawnedAudioSource =
+    Instantiate(audio, this.GetComponent<Transform>().position, Quaternion.identity);
+        spawnedAudioSource.transform.parent = spawnAtRuntime.transform;
+    }
+    private void ProccessFX(ParticleSystem particles)
+    {
+        ParticleSystem spawnedExplosion =
+            Instantiate(particles, this.GetComponent<Transform>().position, Quaternion.identity);
+        spawnedExplosion.transform.parent = spawnAtRuntime.transform;
+
+    }
+    private void ProccessFX(AudioSource audio)
+    {
+        AudioSource spawnedAudioSource =
+    Instantiate(audio, this.GetComponent<Transform>().position, Quaternion.identity);
+        spawnedAudioSource.transform.parent = spawnAtRuntime.transform;
     }
 
     private void ProccessScore(int points)
