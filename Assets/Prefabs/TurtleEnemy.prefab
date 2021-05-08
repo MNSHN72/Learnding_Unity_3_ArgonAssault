@@ -58,7 +58,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathExplosion: {fileID: 391977763437517737, guid: 576c01c81e6461b4bb23bb3c7a698d7d, type: 3}
   hitSparks: {fileID: 3384350255300321916, guid: a0001989418fa9445bfaaa0765701f8f, type: 3}
-  parent: {fileID: 0}
   pointsOnKill: 700
   pointsOnHit: 100
   HP: 40

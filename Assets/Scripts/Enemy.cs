@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private GameObject spawnAtRuntime;
     private bool isAlive = true;
     private ScoreBoard sb;
+
     private void Start()
     {
         this.gameObject.AddComponent<Rigidbody>();
@@ -28,11 +29,16 @@ public class Enemy : MonoBehaviour
         ProccessScore(pointsOnHit);
         if (isAlive && HP <= 0)
         {
-            isAlive = false;
-            ProccessScore(pointsOnKill);
-            ProccessParticleEffects(deathExplosion);
-            Destroy(this.gameObject);
+            PerishLikeADog();
         }
+    }
+
+    private void PerishLikeADog()
+    {
+        isAlive = false;
+        ProccessScore(pointsOnKill);
+        ProccessParticleEffects(deathExplosion);
+        Destroy(this.gameObject);
     }
 
     private void ProccessDamage(GameObject attack)
