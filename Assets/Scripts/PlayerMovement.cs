@@ -32,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
         {
             reloadLevel();
         }
+        if (Input.GetKey((KeyCode)27))
+        {
+            Application.Quit();
+        }
         if (isAlive == true)
         {
             ProccessTranslation();
