@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7fa8dc9d3be780148bf8dc34ce793690, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9ca303b92cf626042a00996adac27eca, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -180,8 +180,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "MOVE: WASD/L JOYSTICK \nSHOOT: L&R CLICK/ SQUARE & R1/ X & RB\nRELOAD:
-    H QUIT: esc"
+  m_text: "*MOVE: WASD/L JOYSTICK \n*SHOOT: L&R CLICK/ SQUARE & R1/ X & RB\n*RELOAD:
+    H     *QUIT: esc"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c73612b2826a7a446a4a723931d3ed9e, type: 2}
   m_sharedMaterial: {fileID: 6383096148850667331, guid: c73612b2826a7a446a4a723931d3ed9e, type: 2}
@@ -1241,6 +1241,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3516826686799117728, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516826686799117728, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729231855853068214, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_Name
+      value: VulcanR1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178024671793203166, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178024671793203166, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178024671793203166, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248566727538533832, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
+      propertyPath: m_Name
+      value: VulcanR1
+      objectReference: {fileID: 0}
     - target: {fileID: 4363726716686826776, guid: 20291bab1b69cfb47ac859f37d1491a9, type: 3}
       propertyPath: m_Name
       value: Player
